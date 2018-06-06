@@ -78,7 +78,7 @@ public void filePathset(String name){
             FileWriter fileWriter = new FileWriter(fileText,b);
 
             // 写文件
-            fileWriter.write(w);
+            fileWriter.write(w.trim());
             // 关闭
             fileWriter.close();
         }
