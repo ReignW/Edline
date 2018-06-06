@@ -10,7 +10,7 @@ public class History {
     int historyOfpin;//指针记录
     void fresh(String content){
         if(!this.getLast().equals(content))//P等对文本不改动的指令，不需要纪录历史
-        history.add(content.trim());
+        history.add(History.tirming(content.trim()));
         check=false;
     }//更新最新的文本纪录
     void cover(String content){
@@ -58,4 +58,14 @@ public class History {
     }
     }
     HashMap getmap(){return marktable;}
+
+
+    static String tirming(String s){
+        if(s.startsWith(System.getProperty("line.separator")))
+            s=s.replaceFirst(System.getProperty("line.separator"),"");
+        if(s.endsWith(System.getProperty("line.separator")))
+            s.substring(0,s.length()-1);
+
+        return s;
+    }
 }
