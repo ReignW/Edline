@@ -34,7 +34,8 @@ public class EDLineEditor {
   public void initialize(){
 	  String[] begin=sc.nextLine().split(" ");
 	  if(begin.length==2){
-		  f=new FileProcess(begin[1]);}
+		  f=new FileProcess(begin[1]);
+	  }
 	  else {
 		  f = new FileProcess();
 	  }//ed进入编辑器
