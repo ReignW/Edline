@@ -19,14 +19,13 @@ public class EDLineEditor {
 	 * 说明：可以添加其他类和方法，但不要删除该文件，改动该方法名和参数，不要改动该文件包名和类名
 	 */
 	public static void main(String[] args) {
-		/*	EDLineEditor e=new EDLineEditor();
+			EDLineEditor e=new EDLineEditor();
 			e.initialize();
 			try{e.doing();}
 			catch(Exit exit){
 			}//退出程序
-		catch(Exception ee){
-		}*/
-		System.out.println(" ");
+
+	//	System.out.println(" ");
 		}
 
 
@@ -50,7 +49,9 @@ public class EDLineEditor {
 
 public void doing(){
 		while(sc.hasNextLine()){
-			Dealer.engine(sc.nextLine(),h,e);
+			String line =sc.nextLine();
+			System.out.println("_________"+line+"_________");
+			Dealer.engine(line,h,e);
 		//	System.out.print(h.getLast()+" "+h.getPinpoint());//检查
 		}
 }//执行
