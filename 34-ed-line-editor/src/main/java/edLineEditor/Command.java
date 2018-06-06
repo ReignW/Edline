@@ -149,8 +149,8 @@ class CommandF implements  Command{
     }
     public void run(){
         if(filepath.trim().length()==0){
-           if(e.filepathcheck().length()==0)
-            System.out.println("?");
+           if(e.filepathcheck().length()==0);
+        //    System.out.println("?");
            else
             System.out.println(e.filepathcheck());
         }
@@ -175,7 +175,7 @@ class Commandw implements  Command {
     public void run() {
         if (filepath.length() == 0) {
             if (edit.filepathcheck().length() == 0){
-                System.out.println("?");
+            //    System.out.println("?");
             return ;}
             else
                 filepath=edit.filepathcheck();
@@ -197,7 +197,7 @@ class CommandW implements  Command{
     public void run(){
         if (filepath.length() == 0) {
             if (edit.filepathcheck().length() == 0){
-                System.out.println("?");
+         //       System.out.println("?");
             return ;}
             else
                 filepath=edit.filepathcheck();
