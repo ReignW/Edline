@@ -95,7 +95,6 @@ public class CommandParse {
         }
 
         if (lineNum[0] < 1 || lineNum[1] > h.getMax()|| lineNum[0] > lineNum[1]) {
-            System.out.println("?");
             lineNum[0] = -1;
             lineNum[1] = -1;
         }//检验是否合理
