@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class EDLineEditor {
-	FileProcess f;
+	static FileProcess f;
 	public Scanner sc=new Scanner(System.in);
-	History h=new History();
+	static History h=new History();
 	EditTool e=new EditTool(sc,h,f);
 	/**
 	 * 接收用户控制台的输入，解析命令，根据命令参数做出相应处理。
@@ -27,6 +27,7 @@ public class EDLineEditor {
 		catch(Exception ee){
 				System.out.println("?");
 		}
+		f.WriteIn(h.getLast());
 		}
 
 
