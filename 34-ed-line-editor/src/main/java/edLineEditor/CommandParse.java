@@ -22,7 +22,10 @@ public class CommandParse {
         }
 
         //解析单字符指令
-        commandbe=command.charAt(Pin);//地址
+        try{commandbe=command.charAt(Pin);}//地址
+            catch(Exception e){
+                commandbe=command.charAt(0);
+            }
         Pin++;
 
         //解析参数
