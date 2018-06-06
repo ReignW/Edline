@@ -138,6 +138,7 @@ try{        for (Object key :h.getmap().keySet()) {
 
     void fileWritein(String content,String filepath,boolean b){
         FileProcess.WriteIn(content,filepath,b);
+        h.bufferfresh();
     }//b为true时候为追加内容
 
     int ParaParse(String para){

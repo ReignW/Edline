@@ -7,7 +7,7 @@ public class EDLineEditor {
 	FileProcess f;
 	public Scanner sc=new Scanner(System.in);
 	History h=new History();
-	EditTool e=new EditTool(sc,h,f);
+	EditTool e;
 	/**
 	 * 接收用户控制台的输入，解析命令，根据命令参数做出相应处理。
 	 * 不需要任何提示输入，不要输出任何额外的内容。
@@ -38,12 +38,12 @@ public class EDLineEditor {
 	  else {
 		  f = new FileProcess();
 	  }//ed进入编辑器
-
 	  h.fresh(f.getContent());//设置第一次内容
 	  //以上是初始化的内容
 	  if(f.getContent().length()!=0)
 	  h.setPinpoint(f.getContent().split(System.getProperty("line.separator")).length);
 	  else h.setPinpoint(1);
+	  e=new EditTool(sc,h,f);
 
   }//初始化的方法
 

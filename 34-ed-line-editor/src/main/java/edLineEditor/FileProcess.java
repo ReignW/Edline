@@ -10,7 +10,12 @@ public class FileProcess {
     }
     FileProcess(String file){
         filePath=file;
+        File f=new File(filePath);
+        if(!f.exists()){
+            try{f.createNewFile();}catch(Exception e){}
+        }
         fileContent=this.FileRead();
+
     }//ed file的构造方法
     String getContent(){
         return fileContent;
@@ -87,5 +92,6 @@ public void filePathset(String name){
             //
             e.printStackTrace();
         }
+
     }
 }

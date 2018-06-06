@@ -141,10 +141,14 @@ class CommandQ implements  Command{
 
 
 class CommandF implements  Command{
-    String filepath;
+    String filepath="";
     EditTool e;
     CommandF(EditTool de,String para){
-        this.filepath=para;
+        try{
+            para.length();
+            this.filepath=para;
+        }catch(Exception re){
+        }
         this.e=de;
     }
     public void run(){
