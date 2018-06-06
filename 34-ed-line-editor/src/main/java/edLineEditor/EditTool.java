@@ -100,11 +100,8 @@ try{        for (Object key :h.getmap().keySet()) {
         String[] content=h.getLast().split(System.getProperty("line.separator"));
         if(b){
         for(int i=pins[0]-1;i<pins[1];i++){
-           if(i==pins[1]-1){
-                System.out.print(content[i]);
-            }
-           else System.out.print(content[i]+System.getProperty("line.separator"));
-        }}
+           System.out.print(content[i]+System.getProperty("line.separator"));}
+        }
         else{
         for(int i=pins[0]-1;i<pins[1];i++){
             re=re+content[i]+System.getProperty("line.separator");
