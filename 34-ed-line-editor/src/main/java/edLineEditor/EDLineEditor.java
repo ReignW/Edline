@@ -24,7 +24,7 @@ public class EDLineEditor {
 			try{e.doing();}
 			catch(Exit exit){
 			}//退出程序
-		catch(ArrayIndexOutOfBoundsException ee){
+		catch(Exception ee){
 				System.out.println("?");
 		}
 		}
