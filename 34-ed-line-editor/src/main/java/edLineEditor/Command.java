@@ -124,7 +124,7 @@ class Commandqq implements  Command{
         this.edit=e;
     }
     public void run(){
-        edit.quit();
+        edit.check();
     }
 }
 
@@ -161,21 +161,25 @@ class CommandF implements  Command{
 }
 
 
-class Commandw implements  Command {
+class Commandww implements  Command {
     int[] pins;
-    String filepath;
+    String filepath="";
     EditTool edit;
 
-    Commandw(int[] Pins, EditTool e, String para) {
+    Commandww(int[] Pins, EditTool e, String para) {
         this.pins = Pins;
         this.edit = e;
-        this.filepath = para;
+        try{
+            para.length();
+            this.filepath=para;
+        }catch(Exception re){
+        }
     }
 
     public void run() {
         if (filepath.length() == 0) {
             if (edit.filepathcheck().length() == 0){
-            //    System.out.println("?");
+               System.out.println("?");
             return ;}
             else
                 filepath=edit.filepathcheck();

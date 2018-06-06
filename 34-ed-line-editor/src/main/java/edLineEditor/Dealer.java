@@ -26,7 +26,7 @@ public class Dealer {
             case('q'):c=new Commandqq(e);break;
             case('Q'):c=new CommandQ(e);break;
             case('f'):c=new CommandF(e,para);break;
-            case('w'):c=new Commandw(pins,e,para);break;
+            case('w'):c=new Commandww(pins,e,para);break;
             case('W'):c=new CommandW(pins,e,para);break;
             case('m'):c=new CommandM(pins,e,para);break;
             case('t'):c=new CommandT(pins,e,para);break;

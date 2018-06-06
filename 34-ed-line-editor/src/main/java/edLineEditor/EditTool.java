@@ -119,7 +119,7 @@ try{        for (Object key :h.getmap().keySet()) {
     void check(){
         if(h.checkhere()||check) quit();
         else{
-    //        System.out.println("?");
+          System.out.println("?");
             check=true;
         }
     }
