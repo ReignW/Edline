@@ -55,7 +55,7 @@ public class CommandParse {
                 }
             }
             if (!isFound) {
-                System.out.println("?");
+        //        System.out.println("?");
             }//搜索
         } else if (addressGroup.matches("^[?].+[?]$")) {
             String temp = addressGroup.substring(1, addressGroup.length() - 1);
@@ -69,7 +69,7 @@ public class CommandParse {
                 }
             }
             if (!isFound) {
-                System.out.println("?");
+            //    System.out.println("?");
             }
         } else if (addressGroup.matches("^['][a-z]$")) {
             Integer line = h.getMarkLine(addressGroup.charAt(1) + "");
@@ -78,7 +78,7 @@ public class CommandParse {
                 lineNum[0] = line;
                 lineNum[1] = lineNum[0];
             } else {
-                System.out.println("?");
+            //    System.out.println("?");
             }
         }
 
