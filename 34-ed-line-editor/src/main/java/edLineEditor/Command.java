@@ -299,12 +299,10 @@ class CommandS implements  Command{
     }
     public void run(){
         String content=edit.print(pins,false);
-        String result=edit.replace(content,para);
-        content=result;
-        edit.fresh(result.trim());
-        result=edit.Delete(pins);
-        edit.cover(result.trim());
-        result=edit.Add(pins[0],content);
+        String aft=edit.replace(content,para);
+        String result=edit.Delete(pins);
+        edit.fresh(result);
+        result=edit.Add(edit.getPinpoint(),aft);
         edit.cover(result);
     }
 }

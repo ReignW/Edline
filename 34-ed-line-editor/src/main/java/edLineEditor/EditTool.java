@@ -174,7 +174,10 @@ try{        for (Object key :h.getmap().keySet()) {
             re="";
         for(String item: linescontent){
             re=re+item.replaceFirst(parameter[1],parameter[2])+System.getProperty("line.separator");
-        }}}
+        }
+            linescontent=re.split(System.getProperty("line.separator"));
+        }
+        }
         else{
             for(String item: linescontent){
                 re=re+item.replaceAll(parameter[1],parameter[2])+System.getProperty("line.separator");
