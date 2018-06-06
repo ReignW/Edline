@@ -128,7 +128,8 @@ try{        for (Object key :h.getmap().keySet()) {
     }
 
     void filepathset(String para){
-        f.filePathset(para);
+        try{
+        f.filePathset(para);}catch(Exception e){}
     }
     String filepathcheck(){
         try{
