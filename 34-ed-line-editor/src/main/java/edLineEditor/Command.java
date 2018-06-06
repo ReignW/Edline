@@ -148,7 +148,7 @@ class CommandF implements  Command{
         this.e=de;
     }
     public void run(){
-        if(filepath.length()==0){
+        if(filepath.trim().length()==0){
            if(e.filepathcheck().length()==0)
             System.out.println("?");
            else
