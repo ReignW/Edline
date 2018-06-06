@@ -124,7 +124,7 @@ class Commandqq implements  Command{
         this.edit=e;
     }
     public void run(){
-        edit.check();
+        edit.quit();
     }
 }
 
@@ -149,8 +149,8 @@ class CommandF implements  Command{
     }
     public void run(){
         if(filepath.trim().length()==0){
-           if(e.filepathcheck().length()==0);
-        //    System.out.println("?");
+           if(e.filepathcheck().length()==0)
+           System.out.println("?");
            else
             System.out.println(e.filepathcheck());
         }
