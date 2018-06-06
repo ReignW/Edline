@@ -103,7 +103,7 @@ try{        for (Object key :h.getmap().keySet()) {
            if(i==pins[1]-1){
                 System.out.print(content[i].trim());
             }
-           elseSystem.out.print(content[i].trim()+System.getProperty("line.separator"));
+           else System.out.print(content[i].trim()+System.getProperty("line.separator"));
         }}
         else{
         for(int i=pins[0]-1;i<pins[1];i++){
