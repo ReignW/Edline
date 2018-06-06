@@ -88,7 +88,7 @@ try{        for (Object key :h.getmap().keySet()) {
             }
             }
         }catch (Exception e){}
-        return re.trim();
+        return re;
     }//删除内容的复用方法
 
     void Print(int[] pins){
@@ -162,7 +162,7 @@ try{        for (Object key :h.getmap().keySet()) {
 
     String replace(String content,String para){
         String re="";
-        if(para.trim().length()==0){
+        if(para.length()==0){
             para=lastpara;
         }
         else
@@ -183,7 +183,7 @@ try{        for (Object key :h.getmap().keySet()) {
             for(String item: linescontent){
                 re=re+item.replaceAll(parameter[1],parameter[2])+System.getProperty("line.separator");
         }}
-        return re.trim();
+        return re;
     }
 
 }
