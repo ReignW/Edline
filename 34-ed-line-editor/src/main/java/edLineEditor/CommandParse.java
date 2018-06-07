@@ -45,7 +45,15 @@ public class CommandParse {
         if (addressGroup.matches("^[/].+[/]$")) {
             String temp = addressGroup.substring(1, addressGroup.length() - 1);
             String[] content=h.getLast().split(System.getProperty("line.separator"));
-            for (int i = h.getPinpoint(), linesSize = content.length; i < linesSize; i++) {
+            for (int i = h.getPinpoint(); i < content.length; i++) {
+                if (content[i].contains(temp)) {
+                    lineNum[0] = i + 1;
+                    lineNum[1] = lineNum[0];
+                    isFound = true;
+                    break;
+                }
+            }
+            for(int i=0;i<h.getPinpoint();i++){
                 if (content[i].contains(temp)) {
                     lineNum[0] = i + 1;
                     lineNum[1] = lineNum[0];
@@ -54,7 +62,7 @@ public class CommandParse {
                 }
             }
             if (!isFound) {
-        //        System.out.println("?");
+                System.out.println("?");
             }//搜索
         } else if (addressGroup.matches("^[?].+[?]$")) {
             String temp = addressGroup.substring(1, addressGroup.length() - 1);
@@ -67,8 +75,16 @@ public class CommandParse {
                     break;
                 }
             }
+            for(int i=h.getMax();i>h.getPinpoint()-2;i--){
+                if (content[i].contains(temp)) {
+                    lineNum[0] = i + 1;
+                    lineNum[1] = lineNum[0];
+                    isFound = true;
+                    break;
+                }
+            }
             if (!isFound) {
-            //    System.out.println("?");
+                System.out.println("?");
             }
         } else if (addressGroup.matches("^['][a-z]$")) {
             Integer line = h.getMarkLine(addressGroup.charAt(1) + "");
