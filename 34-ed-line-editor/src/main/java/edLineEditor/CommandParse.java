@@ -23,7 +23,16 @@ public class CommandParse {
 
         //解析单字符指令
         if(command.length()!=1){
-        commandbe=command.charAt(Pin);//地址
+      try {
+          commandbe = command.charAt(Pin);//地址
+      }catch(StringIndexOutOfBoundsException e){
+          String[] s=command.split("/");
+          for(String item:s){
+              if(item.trim().length()==1){
+                  commandbe=item.charAt(0);
+              }
+          }
+      }
         Pin++;
 
         //解析参数
