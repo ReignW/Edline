@@ -12,6 +12,9 @@ class CommandA implements Command{
     EditTool edit;
 CommandA(int[] pins,EditTool e){
     this.Pins=pins;
+    if(pins[0]==-111){
+        Pins[0]=Pins[1]=e.h.getPinpoint();
+    }
     this.edit=e;
     }
     public void run(){
@@ -43,6 +46,9 @@ class CommandD implements  Command{
     EditTool edit;
     CommandD(int[] pins,EditTool e){
         this.Pins=pins;
+        if(pins[0]==-111){
+            Pins[0]=Pins[1]=e.h.getPinpoint();
+        }
         this.edit=e;
     }
     public void run(){
@@ -57,6 +63,9 @@ class CommandC implements Command{
     EditTool edit;
     CommandC(int[] pins,EditTool e){
         this.Pins=pins;
+        if(pins[0]==-111){
+            Pins[0]=Pins[1]=e.h.getPinpoint();
+        }
         this.edit=e;
     }
     public void run(){
@@ -73,6 +82,9 @@ class CommandP implements  Command{
     EditTool edit;
     CommandP(int[] pins,EditTool e){
         this.Pins=pins;
+        if(pins[0]==-111){
+            Pins[0]=Pins[1]=e.h.getPinpoint();
+        }
         this.edit=e;
     }
     public void run(){
@@ -190,6 +202,7 @@ class Commandww implements  Command {
 
     Commandww(int[] Pins, EditTool e, String para) {
         this.pins = Pins;
+
         this.edit = e;
         try{
             para.length();
@@ -199,9 +212,8 @@ class Commandww implements  Command {
             pins[1]=edit.h.getMax();
 
         }
-        if(pins[0]==pins[1]){
-            pins[0]=1;
-            pins[1]=edit.h.getMax();
+        if(pins[0]==-111){
+            Pins[0]=Pins[1]=e.h.getPinpoint();
         }
     }
 
@@ -224,6 +236,9 @@ class CommandW implements  Command{
     EditTool edit;
     CommandW(int[] Pins,EditTool e,String para){
         this.pins=Pins;
+        if(pins[0]==-111){
+            Pins[0]=Pins[1]=e.h.getPinpoint();
+        }
         this.edit=e;
         this.filepath=para;
     }
@@ -246,6 +261,9 @@ class CommandT implements  Command{
     EditTool edit;
     CommandT(int[] p,EditTool e,String pa){
         this.Pins=p;
+        if(p[0]==-111){
+            Pins[0]=Pins[1]=e.h.getPinpoint();
+        }
         this.edit=e;
         this.para=pa;
     }
@@ -264,6 +282,9 @@ class CommandM implements  Command{
     EditTool edit;
     CommandM(int[] p,EditTool e,String pa){
         this.Pins=p;
+        if(p[0]==-111){
+            Pins[0]=Pins[1]=e.h.getPinpoint();
+        }
         this.edit=e;
        try{
            Integer.valueOf(pa);
@@ -290,6 +311,9 @@ class CommandJ implements  Command{
     CommandJ(int[] p,EditTool e){
         this.edit=e;
         this.Pins=p;
+        if(p[0]==-111){
+            Pins[0]=Pins[1]=e.h.getPinpoint();
+        }
     }
     public void run(){
         String replace=edit.join(edit.print(Pins,false));
@@ -318,6 +342,9 @@ class CommandK implements  Command{
     String mark;
     CommandK(int[] p,EditTool e,String m){
         this.Pins=p;
+        if(p[0]==-111){
+            Pins[0]=Pins[1]=e.h.getPinpoint();
+        }
         this.edit=e;
         this.mark=m;
     }
@@ -334,6 +361,9 @@ class CommandS implements  Command{
     CommandS(int[] p,EditTool e,String s){
         this.pins=p;
         this.edit=e;
+        if(pins[0]==-111){
+            pins[0]=pins[1]=e.h.getPinpoint();
+        }
         this.para=s;
     }
     public void run(){
