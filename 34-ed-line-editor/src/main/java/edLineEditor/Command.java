@@ -296,7 +296,12 @@ class CommandT implements  Command{
             Pins[0]=Pins[1]=e.h.getPinpoint();
         }
         this.edit=e;
+        try{
+            Integer.valueOf(pa);
         this.para=pa;
+    }catch(Exception ee){
+        para=String.valueOf(e.getPinpoint());
+        }
     }
     public void run() {
         String content=edit.print(Pins,false);
