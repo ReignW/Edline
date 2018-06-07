@@ -192,7 +192,11 @@ public class CommandParse {
             return new int[]{currentLine + Integer.valueOf(addressGroup), currentLine + Integer.valueOf(addressGroup)};
         } else if (addressGroup.matches("^[$][-+0-9]+$")) {
             return new int[]{maxLine + Integer.valueOf(addressGroup.substring(1)), maxLine + Integer.valueOf(addressGroup.substring(1))};
-        } else {
+        } else if(addressGroup.matches("^[0-9]+[,][0-9]+$")){
+            return new int[] {Integer.valueOf(addressGroup.split(",")[0],Integer.valueOf(addressGroup.split(",")[1]))};
+        }
+
+        else {
             return new int[]{-111,-1111};//我也不知道这里会发生什么
         }
     }
