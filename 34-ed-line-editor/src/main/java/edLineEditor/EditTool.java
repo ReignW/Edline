@@ -66,7 +66,7 @@ try{        for (Object key :h.getmap().keySet()) {
 
     String Delete(int[] pins){
         String re=delete(pins);
-        int pin=2*pins[1]-pins[0]+2;
+        int pin=pins[0];
         if(pin>h.getMax()-pins[1]+pins[0]-1){
             pin=h.getMax()-pins[1]+pins[0]-1;
         }

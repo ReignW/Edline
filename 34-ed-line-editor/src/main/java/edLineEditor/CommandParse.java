@@ -11,6 +11,7 @@ public class CommandParse {
     String para;//参数
     private static final String GREP = "(^([.]|[$]|[-+]?[0-9]+(,[0-9]+)?|[,]|[;]|[/].+[/]|[?].+[?]|'[a-z])+)";
     private static final String CommandList = "aicdp=zqQfwWmtjsku";//我认输...穷途末路
+    boolean Second=false;//第二种解析方法的开关
 
     public CommandParse parseCommand(String command) {
         int Pin=0;//匹配字符串最后一个位置的指针
@@ -27,10 +28,12 @@ public class CommandParse {
       try {
           commandbe = command.charAt(Pin);//地址
       }catch(StringIndexOutOfBoundsException e){
-          String[] s=command.split("");
+          String[] s=command.split("/");
           for(String item:s){
-              if(CommandList.contains(item)){
+              if(CommandList.contains(item)&&item.length()==1){
                   commandbe=item.charAt(0);
+                  Second=true;
+                  break;
               }
           }
       }
@@ -46,6 +49,11 @@ public class CommandParse {
         }
         }
         else commandbe=command.charAt(0);
+        if(Second){
+            String[] s=command.split(String.valueOf(commandbe));
+            adressGroup=s[0];
+            Second=false;
+        }
 
 
         return c;//打包了命令的全部内容
