@@ -33,13 +33,18 @@ public class CommandParse {
               }
           }
       }
-        Pin++;
+      Pin++;
 
         //解析参数
         if (Pin <= command.length()) {
             para=command.substring(Pin).trim();//所有起始和结尾的空格都被删除
         }}
-        else commandbe=command.charAt(0);
+        else {
+         String[] s=command.split(String.valueOf(commandbe));
+         para=s[s.length-1];
+        }
+
+
         return c;//打包了命令的全部内容
     }
 
