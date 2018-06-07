@@ -166,6 +166,9 @@ try{        for (Object key :h.getmap().keySet()) {
         }
         else
         this.lastpara=para;
+        if(para.substring(para.length()-1,para.length()).equals("/")){
+            para=para+"1";
+        }
         String[] parameter=para.split("/");
 
         String[] linescontent=content.split(System.getProperty("line.separator"));
