@@ -97,8 +97,8 @@ public class CommandParse {
         }
 
         if (lineNum[0] < 1 || lineNum[1] > h.getMax()|| lineNum[0] > lineNum[1]) {
-            lineNum[0] = -1;
-            lineNum[1] = -1;
+            lineNum[0] = -111;
+            lineNum[1] = -111;
         }//检验是否合理
 
         return lineNum;
@@ -133,7 +133,7 @@ public class CommandParse {
         } else if (addressGroup.matches("^[$][-+0-9]+$")) {
             return new int[]{maxLine + Integer.valueOf(addressGroup.substring(1)), maxLine + Integer.valueOf(addressGroup.substring(1))};
         } else {
-            return new int[]{-1,-1};//我也不知道这里会发生什么
+            return new int[]{-111,-1111};//我也不知道这里会发生什么
         }
     }
 }//处理地址
