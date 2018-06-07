@@ -177,6 +177,9 @@ class Commandww implements  Command {
             para.length();
             this.filepath=para;
         }catch(Exception re){
+            pins[0]=1;
+            pins[1]=edit.h.getMax();
+
         }
     }
 
