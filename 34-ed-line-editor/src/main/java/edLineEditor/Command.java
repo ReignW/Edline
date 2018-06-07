@@ -99,7 +99,12 @@ class CommandZ implements  Command{
     CommandZ(int[] pins,EditTool e,String p){
         this.Pins=pins;
         this.edit=e;
-        para=p;
+      try{
+          Integer.valueOf(p);
+          para=p;
+      }catch(Exception ee){
+          para=String.valueOf(e.h.getMax());
+      }
     }
     public void run(){
         String recover=edit.print(Pins,false);
