@@ -29,11 +29,16 @@ public class CommandParse {
           commandbe = command.charAt(Pin);//地址
       }catch(StringIndexOutOfBoundsException e){
           String[] s=command.split("/");
-          for(String item:s){
+          for(int i=0;i<s.length;i++){
+              String item=s[i];
               if(CommandList.contains(item)&&item.length()==1){
+                  if(i!=0&&i!=s.length-1){
+                      int cc=Integer.valueOf(s[i-1].charAt(0));
+                      int ccc=Integer.valueOf(s[i+1].charAt(0));
+                      if(!((cc>=65&&cc<=90)||(cc>=97&&cc<=122)||(ccc>=65&&i<=90)||(ccc>=97&&i<=122))){
                   commandbe=item.charAt(0);
                   Second=true;
-                  break;
+                  break;}}
               }
           }
       }
