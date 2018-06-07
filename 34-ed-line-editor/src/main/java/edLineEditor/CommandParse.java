@@ -39,6 +39,10 @@ public class CommandParse {
                   commandbe=item.charAt(0);
                   Second=true;
                   break;}}
+                  else{
+                      commandbe=item.charAt(0);
+                      Second=false;
+                  }
               }
           }
       }
