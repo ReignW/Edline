@@ -247,7 +247,13 @@ class CommandM implements  Command{
     CommandM(int[] p,EditTool e,String pa){
         this.Pins=p;
         this.edit=e;
-        this.para=pa;
+       try{
+           Integer.valueOf(pa);
+           para=pa;
+       }
+       catch(Exception ee){
+           para=String.valueOf(e.getPinpoint());
+        }
     }
     public void run() {
         String content=edit.print(Pins,false);
