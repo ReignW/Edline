@@ -403,11 +403,15 @@ class CommandS implements  Command{
         this.para=s;
     }
     public void run(){
+        boolean last=false;
         String content=edit.print(pins,false);
         String aft=edit.replace(content,para);
+        if(pins[1]==edit.h.getMax()){
+            last=true;
+        }
         String result=edit.Delete(pins);
         edit.fresh(result);
-        if(edit.getPinpoint()==edit.h.getMax())
+        if(last)
         result=edit.Add(edit.getPinpoint(),aft);
         else result=edit.Add(edit.getPinpoint()-1,aft);
         edit.cover(result);
