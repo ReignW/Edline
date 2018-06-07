@@ -37,6 +37,9 @@ public class EditTool {
         return null;
     }
     String Add(int st,String addContent){
+        if(st<0){
+            st=0;
+        }
         String re=add(st,addContent);
             int pin=st+addContent.split(System.getProperty("line.separator")).length;
         if(h.getLast().length()==0){
@@ -96,6 +99,12 @@ try{        for (Object key :h.getmap().keySet()) {
         h.setPinpoint(pins[1]);
     }
     String print(int[] pins,boolean b){
+        if(pins[0]<0){
+            pins[0]=1;
+        }
+        if(pins[1]<0){
+            pins[1]=1;
+        }
         String re="";
         String[] content=h.getLast().split(System.getProperty("line.separator"));
         if(b){
