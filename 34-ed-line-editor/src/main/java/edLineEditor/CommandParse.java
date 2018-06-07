@@ -10,6 +10,7 @@ public class CommandParse {
     String adressGroup;//地址
     String para;//参数
     private static final String GREP = "(^([.]|[$]|[-+]?[0-9]+(,[0-9]+)?|[,]|[;]|[/].+[/]|[?].+[?]|'[a-z])+)";
+    private static final String CommandList = "aicdp=zqQfwWmtjsku";//我认输...穷途末路
 
     public CommandParse parseCommand(String command) {
         int Pin=0;//匹配字符串最后一个位置的指针
@@ -26,9 +27,9 @@ public class CommandParse {
       try {
           commandbe = command.charAt(Pin);//地址
       }catch(StringIndexOutOfBoundsException e){
-          String[] s=command.split("/");
+          String[] s=command.split("");
           for(String item:s){
-              if(item.trim().length()==1){
+              if(CommandList.contains(item)){
                   commandbe=item.charAt(0);
               }
           }
@@ -78,7 +79,7 @@ public class CommandParse {
                 }
             }
             if (!isFound) {
-                System.out.println("?");
+           System.out.println("?");
             }//搜索
         } else if (addressGroup.matches("^[?].+[?]$")) {
             String temp = addressGroup.substring(1, addressGroup.length() - 1);
