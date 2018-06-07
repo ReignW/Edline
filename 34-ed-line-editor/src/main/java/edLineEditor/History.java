@@ -76,5 +76,6 @@ public class History {
     }
     void back(){
         history.remove(history.size()-1);
+        check=true;
     }//不修改指针删除
 }
