@@ -112,21 +112,15 @@ class CommandZ implements  Command{
       }
     }
     public void run(){
-        String recover=edit.print(Pins,false);
-        String result=edit.Delete(Pins);
-        edit.fresh(result);
-        parameter=result.split(System.getProperty("line.separator")).length;
+        parameter=edit.h.getMax();
         if(para.length()==0){
-            parameter=result.split(System.getProperty("line.separator")).length;
+            parameter=edit.h.getMax();
         }
         else if(Pins[1]+Integer.valueOf(para)<parameter){
             parameter=Pins[1]+Integer.valueOf(para);
         }
-        result=edit.Add(parameter,recover);
         Pins[1]=parameter;
-        edit.cover(result);
         edit.Print(Pins);
-        edit.h.back();
     }
 }
 
