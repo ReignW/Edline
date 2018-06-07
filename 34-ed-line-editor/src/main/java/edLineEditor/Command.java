@@ -123,6 +123,8 @@ class CommandZ implements  Command{
             parameter=Pins[1]+Integer.valueOf(para);
         }
         result=edit.Add(parameter,recover);
+        Pins[1]=parameter;
+        edit.Print(Pins);
         edit.fresh(result);
     }
 }
