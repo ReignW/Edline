@@ -116,7 +116,7 @@ public class CommandParse {
                     break;
                 }
             }
-            for(int i=h.getMax();i>h.getPinpoint()-2;i--){
+            for(int i=h.getMax()-1;i>h.getPinpoint()-2;i--){
                 if (content[i].contains(temp)) {
                     lineNum[0] = i + 1;
                     lineNum[1] = lineNum[0];
