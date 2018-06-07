@@ -208,11 +208,12 @@ class Commandww implements  Command {
             para.length();
             this.filepath=para;
         }catch(Exception re){
-            this.filepath=e.f.getFilePath();
+            filepath=e.f.getFilePath();
 
         }
         if(pins[0]==-111){
-            Pins[0]=Pins[1]=e.h.getPinpoint();
+            Pins[0]=1;
+            Pins[1]=e.h.getMax();
         }
     }
 
