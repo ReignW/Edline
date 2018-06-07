@@ -26,6 +26,9 @@ class CommandI implements  Command{
     EditTool edit;
     CommandI(int[] pins,EditTool e){
         this.Pins=pins;
+        if(pins[0]==-111){
+            Pins[1]=Pins[0]=e.getPinpoint();
+        }
         this.edit=e;
     }
     public void run(){
