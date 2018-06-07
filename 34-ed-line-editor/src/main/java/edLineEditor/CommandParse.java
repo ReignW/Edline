@@ -56,7 +56,21 @@ public class CommandParse {
             adressGroup=s[0];
             Second=false;
         }
-
+        String[] List=CommandList.split("");
+        for(int i=0;i<CommandList.length();i++){
+            if(command.startsWith(List[i])){
+                commandbe=command.charAt(0);
+                para=command.substring(1,command.length());
+                adressGroup="";
+                break;
+            }
+            else if(command.endsWith(List[i])){
+                commandbe=command.charAt(command.length()-1);
+                para="";
+                adressGroup=command.substring(0,command.length()-1);
+                break;
+            }
+        }
 
         return c;//打包了命令的全部内容
     }
