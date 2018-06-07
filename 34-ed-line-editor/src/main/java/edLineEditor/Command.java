@@ -98,6 +98,11 @@ class CommandZ implements  Command{
     int parameter;
     CommandZ(int[] pins,EditTool e,String p){
         this.Pins=pins;
+        if(pins[0]==-1){
+            Pins[0]=1;
+            Pins[1]=e.h.getMax();
+        }
+
         this.edit=e;
       try{
           Integer.valueOf(p);

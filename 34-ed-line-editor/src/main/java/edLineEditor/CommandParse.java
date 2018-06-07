@@ -133,7 +133,7 @@ public class CommandParse {
         } else if (addressGroup.matches("^[$][-+0-9]+$")) {
             return new int[]{maxLine + Integer.valueOf(addressGroup.substring(1)), maxLine + Integer.valueOf(addressGroup.substring(1))};
         } else {
-            return new int[]{-999,-999};//我也不知道这里会发生什么
+            return new int[]{-1,-1};//我也不知道这里会发生什么
         }
     }
 }//处理地址
