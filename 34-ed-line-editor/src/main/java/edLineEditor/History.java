@@ -9,9 +9,15 @@ public class History {
     ArrayList<String> history=new ArrayList<String>();//文版编辑的历史纪录
     int historyOfpin;//指针记录
     void fresh(String content){
-        if(!this.getLast().equals(content))//P等对文本不改动的指令，不需要纪录历史
-        history.add(History.tirming(content.trim()));
-        check=false;
+        if(!this.getLast().equals(content)){//P等对文本不改动的指令，不需要纪录历史
+
+            history.add(History.tirming(content.trim()));
+            check=false;
+            if(history.size()==1){
+            check=true;
+        }
+
+        }
     }//更新最新的文本纪录
     void cover(String content){
         history.remove(history.size()-1);

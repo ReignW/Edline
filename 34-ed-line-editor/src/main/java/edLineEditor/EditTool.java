@@ -117,7 +117,8 @@ try{        for (Object key :h.getmap().keySet()) {
         throw new Exit();
     }//退出的标志
     void check(){
-        if(h.checkhere()||check) quit();
+        if(h.checkhere()||check)
+            quit();
         else{
           System.out.println("?");
             check=true;
