@@ -83,6 +83,9 @@ class CommandE implements  Command{
     EditTool edit;
     CommandE(int[] pins,EditTool e){
         this.Pins=pins;
+        if(pins[0]==-111){
+            Pins[0]=Pins[1]=e.h.getMax();
+        }
         this.edit=e;
     }
     public void run(){

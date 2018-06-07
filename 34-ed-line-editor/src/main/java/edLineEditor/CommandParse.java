@@ -36,12 +36,10 @@ public class CommandParse {
 
 
      int[] parseAddress(String addressGroup,History h) {
-        if(addressGroup==null){
-            return new int[]{h.getPinpoint(),h.getPinpoint()};
+        if(addressGroup==null||addressGroup.length() == 0){
+            return new int[]{-111,-111};
         }
-        if (addressGroup.length() == 0) {
-            return new int[]{h.getPinpoint(),h.getPinpoint()};
-        }//空地址
+        //空地址
         boolean isFound = false;
         int[] lineNum=new int[2];
         if (addressGroup.matches("^[/].+[/]$")) {
