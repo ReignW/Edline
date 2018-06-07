@@ -407,7 +407,9 @@ class CommandS implements  Command{
         String aft=edit.replace(content,para);
         String result=edit.Delete(pins);
         edit.fresh(result);
+        if(edit.getPinpoint()==edit.h.getMax())
         result=edit.Add(edit.getPinpoint(),aft);
+        else result=edit.Add(edit.getPinpoint()-1,aft);
         edit.cover(result);
     }
 }
