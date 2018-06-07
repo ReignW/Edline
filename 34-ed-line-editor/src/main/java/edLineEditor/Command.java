@@ -124,8 +124,9 @@ class CommandZ implements  Command{
         }
         result=edit.Add(parameter,recover);
         Pins[1]=parameter;
+        edit.cover(result);
         edit.Print(Pins);
-        edit.fresh(result);
+        edit.h.back();
     }
 }
 
