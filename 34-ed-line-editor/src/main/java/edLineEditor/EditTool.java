@@ -184,16 +184,7 @@ try{        for (Object key :h.getmap().keySet()) {
         if(!parameter[3].equals("g")){
             re="";
         for(String item: linescontent){
-            String[] pre=item.split(parameter[1]);
-            String aft="";
-            for(int k=0;k<pre.length;k++){
-                if(k==Integer.valueOf(parameter[3])-1){
-                    aft=aft+pre[k]+parameter[2];
-                }
-                else{
-                    aft=aft+pre[k]+parameter[1];
-                }
-            }
+            String aft=remove(item,parameter[1],parameter[2],Integer.valueOf(parameter[3]));
             re=re+aft+System.getProperty("line.separator");
         }
 
@@ -204,6 +195,23 @@ try{        for (Object key :h.getmap().keySet()) {
                 re=re+item.replaceAll(parameter[1],parameter[2])+System.getProperty("line.separator");
         }}
         return re;
+    }
+    public String remove(String s,String string,String replace,int i){
+        if(i==1){
+            int j=s.indexOf(string);
+            if(j!=0){
+            s=s.substring(0, j)+replace+s.substring(j+string.length());}
+            if(j==0){
+                s=replace+s.substring(j+string.length());
+            }
+            i--;
+            return s;
+        }else{
+            int j=s.indexOf(string);
+            i--;
+            return s.substring(0, j+string.length())+remove(s.substring(j+string.length()),string,replace , i);
+        }
+
     }
 
 }
