@@ -181,6 +181,10 @@ class Commandww implements  Command {
             pins[1]=edit.h.getMax();
 
         }
+        if(pins[0]==pins[1]){
+            pins[0]=1;
+            pins[1]=edit.h.getMax();
+        }
     }
 
     public void run() {
