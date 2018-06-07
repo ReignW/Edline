@@ -182,13 +182,22 @@ try{        for (Object key :h.getmap().keySet()) {
 
         String[] linescontent=content.split(System.getProperty("line.separator"));
         if(!parameter[3].equals("g")){
-        for(int i=0;i<Integer.valueOf(parameter[3]);i++){
             re="";
         for(String item: linescontent){
-            re=re+item.replaceFirst(parameter[1],parameter[2])+System.getProperty("line.separator");
+            String[] pre=item.split(parameter[1]);
+            String aft="";
+            for(int k=0;k<pre.length;k++){
+                if(k==Integer.valueOf(parameter[3])-1){
+                    aft=aft+pre[k]+parameter[2];
+                }
+                else{
+                    aft=aft+pre[k]+parameter[1];
+                }
+            }
+            re=re+aft+System.getProperty("line.separator");
         }
-            linescontent=re.split(System.getProperty("line.separator"));
-        }
+
+
         }
         else{
             for(String item: linescontent){
