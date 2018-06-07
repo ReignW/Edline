@@ -51,8 +51,9 @@ public class EDLineEditor {
 public void doing(){
 		while(sc.hasNextLine()){
 			String line =sc.nextLine();
-		//	System.out.println("_________"+line+"_________");
-			Dealer.engine(line,h,e);
+			System.out.println("_________"+line+"_________");
+			try{Dealer.engine(line,h,e);}catch(Exit eeee){throw new Exit();}
+			catch(Exception eeeeeee){continue;}
 		//	System.out.print(h.getLast()+" "+h.getPinpoint());//检查
 		}
 }//执行
