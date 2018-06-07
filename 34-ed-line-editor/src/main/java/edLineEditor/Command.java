@@ -136,7 +136,8 @@ class Commandqq implements  Command{
         this.edit=e;
     }
     public void run(){
-        edit.check();
+        //edit.check();
+        edit.quit();;//这里好像很迷,用例里面没有保存也用了q方法进行退出
     }
 }
 
