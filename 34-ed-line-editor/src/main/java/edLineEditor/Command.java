@@ -98,7 +98,7 @@ class CommandZ implements  Command{
     int parameter;
     CommandZ(int[] pins,EditTool e,String p){
         this.Pins=pins;
-        if(pins[0]==-111){
+        if(pins[0]==-111||(pins[0]==e.getPinpoint()&&pins[1]==e.getPinpoint())){
             Pins[0]=e.getPinpoint()+1;
             Pins[1]=e.getPinpoint()+1;
         }
