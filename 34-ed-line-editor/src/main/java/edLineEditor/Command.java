@@ -231,7 +231,7 @@ class Commandww implements  Command {
 
 
 class CommandW implements  Command{
-    int[] pins;
+  /*  int[] pins;
     String filepath;
     EditTool edit;
     CommandW(int[] Pins,EditTool e,String para){
@@ -251,6 +251,37 @@ class CommandW implements  Command{
                 filepath=edit.filepathcheck();
         }
         edit.fileWritein(edit.print(pins,false),filepath,true);
+    }*/
+  int[] pins;
+    String filepath="";
+    EditTool edit;
+
+    CommandW(int[] Pins, EditTool e, String para) {
+        this.pins = Pins;
+
+        this.edit = e;
+        try{
+            para.length();
+            this.filepath=para;
+        }catch(Exception re){
+            filepath=e.f.getFilePath();
+
+        }
+        if(pins[0]==-111){
+            Pins[0]=1;
+            Pins[1]=e.h.getMax();
+        }
+    }
+
+    public void run() {
+        if (filepath.length() == 0) {
+            if (edit.filepathcheck().length() == 0){
+                System.out.println("?");
+                return ;}
+            else
+                filepath=edit.filepathcheck();
+        }
+        edit.fileWritein(edit.print(pins, false), filepath, true);
     }
 }
 
