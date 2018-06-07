@@ -103,7 +103,7 @@ class CommandZ implements  Command{
             Pins[1]=e.getPinpoint();
         }
         if(pins[0]<-1){
-            pins[0]=1;
+            Pins[0]=0;
         }
 
 
@@ -123,6 +123,7 @@ class CommandZ implements  Command{
         else if(Pins[1]+Integer.valueOf(para)<parameter){
             parameter=Pins[1]+Integer.valueOf(para);
         }
+        Pins[0]=Pins[0]+1;
         Pins[1]=parameter;
         edit.Print(Pins);
     }
