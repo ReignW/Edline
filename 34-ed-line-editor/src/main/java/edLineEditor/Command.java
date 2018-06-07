@@ -99,8 +99,8 @@ class CommandZ implements  Command{
     CommandZ(int[] pins,EditTool e,String p){
         this.Pins=pins;
         if(pins[0]==-1){
-            Pins[0]=1;
-            Pins[1]=e.h.getMax();
+            Pins[0]=e.getPinpoint();
+            Pins[1]=e.getPinpoint();
         }
 
         this.edit=e;
