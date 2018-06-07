@@ -60,14 +60,14 @@ public class CommandParse {
         for(int i=0;i<CommandList.length();i++){
             if(command.startsWith(List[i])){
                 commandbe=command.charAt(0);
-                para=command.substring(1,command.length());
+                para=command.substring(1,command.length()).trim();
                 adressGroup="";
                 break;
             }
             else if(command.endsWith(List[i])){
                 commandbe=command.charAt(command.length()-1);
                 para="";
-                adressGroup=command.substring(0,command.length()-1);
+                adressGroup=command.substring(0,command.length()-1).trim();
                 break;
             }
         }
