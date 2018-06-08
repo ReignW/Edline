@@ -199,11 +199,12 @@ try{        for (Object key :h.getmap().keySet()) {
     public String remove(String s,String string,String replace,int i){
         if(i==1){
             int j=s.indexOf(string);
-            if(j!=0){
-            s=s.substring(0, j)+replace+s.substring(j+string.length());}
-            if(j==0){
-                s=replace+s.substring(j+string.length());
+            if(j<=0){
+                s=s.replaceFirst(string,replace);
             }
+            else{
+            s=s.substring(0, j)+replace+s.substring(j+string.length());}
+
             i--;
             return s;
         }else{
