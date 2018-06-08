@@ -331,20 +331,20 @@ class CommandM implements  Command{
         }
     }
     public void run() {
-        int pin=edit.ParaParse(para)+1;
+        int pin=edit.ParaParse(para);
         if(Pins[1]<pin){
         String content=edit.print(Pins,false);
         String result=edit.Add(pin,content);
         edit.fresh(result);
         result=edit.Delete(Pins);
-        edit.h.setPinpoint(pin+Pins[1]-Pins[0]);
+        edit.h.setPinpoint(pin+1+Pins[1]-Pins[0]);
         edit.cover(result);}
         else{
             String content=edit.print(Pins,false);
             String result=edit.Delete(Pins);
             edit.fresh(result);
-            result=edit.Add(pin-1,content);
-            edit.h.setPinpoint(pin+Pins[1]-Pins[0]);
+            result=edit.Add(pin,content);
+            edit.h.setPinpoint(pin+1+Pins[1]-Pins[0]);
             edit.cover(result);
         }
     }
