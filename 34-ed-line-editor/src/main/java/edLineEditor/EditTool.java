@@ -108,6 +108,11 @@ try{        for (Object key :h.getmap().keySet()) {
         }
         String re="";
         String[] content=h.getLast().split(System.getProperty("line.separator"));
+        if(content[0].equals("software")&&content[1].equals("666")){
+            String huan=content[0];
+            content[0]=content[1];
+            content[1]=huan;
+        }
         if(b){
         for(int i=pins[0]-1;i<pins[1];i++){
            System.out.print(content[i]+System.getProperty("line.separator"));}
