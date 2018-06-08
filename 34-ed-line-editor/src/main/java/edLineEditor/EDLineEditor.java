@@ -56,7 +56,13 @@ public void doing(){
 					System.out.println("?");
 				}
 		//	System.out.println("_________"+line+"_________");
-			else Dealer.engine(line,h,e);}
+			else {try {
+					Dealer.engine(line, h, e);
+				}
+				catch(Question q){
+				System.out.println("?");
+				}
+				}}
 		//	System.out.print(h.getLast()+" "+h.getPinpoint());//检查
 		}
 }//执行

@@ -171,8 +171,8 @@ public class CommandParse {
         }
 
         if (lineNum[0] < 1 || lineNum[1] > h.getMax()|| lineNum[0] > lineNum[1]) {
-            lineNum[0] = -111;
-            lineNum[1] = -111;
+            lineNum[0] = -999;
+            lineNum[1] = -999;
         }//检验是否合理
 
 

@@ -49,6 +49,9 @@ class CommandD implements  Command{
         if(pins[0]==-111){
             Pins[0]=Pins[1]=e.h.getPinpoint();
         }
+        if(pins[0]==-999){
+            throw new Question();
+        }
         this.edit=e;
     }
     public void run(){
