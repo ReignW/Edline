@@ -85,7 +85,7 @@ public class CommandParse {
                 System.out.println("?");
                 System.out.println("?");
             }
-            if(command.length()!=1){
+            else if(command.length()!=1){
                 System.out.println("?");
             }
         }
