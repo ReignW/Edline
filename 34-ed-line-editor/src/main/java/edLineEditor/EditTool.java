@@ -9,6 +9,7 @@ public class EditTool {
     Scanner sc;
     History h;
     FileProcess f;
+  String lasttime="";//给S用
     private boolean check=false;
     EditTool(Scanner c,History hs,FileProcess ff){
         this.sc=c;

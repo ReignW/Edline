@@ -412,15 +412,18 @@ class CommandS implements  Command{
     String para;
     boolean last=false;
     CommandS(int[] p,EditTool e,String s){
-        if(s.trim().length()==0||!last){
-            throw new Question();
-        }
         this.pins=p;
         this.edit=e;
         if(pins[0]==-111){
             pins[0]=pins[1]=e.h.getPinpoint();
         }
-        this.para=s;
+        if(s.trim().length()==0){
+            if(e.lasttime.length()==0){
+                throw new Question();
+            }
+            para=e.lasttime;
+        }
+       else  this.para=s;
     }
     public void run(){
         String content=edit.print(pins,false);
@@ -433,6 +436,7 @@ class CommandS implements  Command{
         if(last)
         result=edit.Add(edit.getPinpoint(),aft);
         else result=edit.Add(edit.getPinpoint()-1,aft);
+        edit.lasttime=para;
         edit.cover(result);
     }
 }
