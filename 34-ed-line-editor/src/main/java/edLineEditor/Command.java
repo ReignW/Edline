@@ -365,6 +365,10 @@ class CommandJ implements  Command{
         this.Pins=p;
         if(p[0]==-111){
             Pins[0]=Pins[1]=e.h.getPinpoint();
+            Pins[1]++;
+            if(Pins[1]>e.h.getMax()){
+                throw new Question();
+            }
         }
     }
     public void run(){

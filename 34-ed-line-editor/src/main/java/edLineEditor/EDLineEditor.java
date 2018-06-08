@@ -50,18 +50,16 @@ public class EDLineEditor {
 public void doing(){
 		while(sc.hasNextLine()){
 			String line =sc.nextLine();
-			if(!line.equals("m")){
-				if(line.equals("j")){
-					System.out.println("?");
-				}
+			if(!line.equals("m"))
+
 		//	System.out.println("_________"+line+"_________");
-			else {try {
+			try {
 					Dealer.engine(line, h, e);
 				}
 				catch(Question q){
 				System.out.println("?");
 				}
-				}}
+
 		//	System.out.print(h.getLast()+" "+h.getPinpoint());//检查
 		}
 }//执行
