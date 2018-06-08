@@ -80,6 +80,12 @@ public class CommandParse {
         }catch(Exception e){
 
         }
+        if(commandbe=='Q'||commandbe=='q'){
+            if(command.length()!=1){
+                System.out.println("?");
+                throw new Exit();
+            }
+        }
         return c;//打包了命令的全部内容
     }
 
