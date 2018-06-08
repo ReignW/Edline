@@ -432,6 +432,9 @@ class CommandS implements  Command{
     public void run(){
         String content=edit.print(pins,false);
         String aft=edit.replace(content,para);
+        if(aft.equals(content)){
+            throw new Question();
+        }
         if(pins[1]==edit.h.getMax()){
             last=true;
         }
