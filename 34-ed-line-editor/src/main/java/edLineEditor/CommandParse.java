@@ -71,6 +71,15 @@ public class CommandParse {
                 break;
             }
         }
+        try{
+            if(command.substring(command.length()-2,command.length()-1).equals("k")){
+                commandbe="k".charAt(0);
+                para=command.substring(command.length()-1,command.length());
+                adressGroup=command.substring(0,command.length()-2);
+            }
+        }catch(Exception e){
+
+        }
         return c;//打包了命令的全部内容
     }
 
