@@ -337,14 +337,14 @@ class CommandM implements  Command{
         String result=edit.Add(pin,content);
         edit.fresh(result);
         result=edit.Delete(Pins);
-        edit.h.setPinpoint(pin);
+        edit.h.setPinpoint(pin+Pins[1]-Pins[0]);
         edit.cover(result);}
         else{
             String content=edit.print(Pins,false);
             String result=edit.Delete(Pins);
             edit.fresh(result);
             result=edit.Add(pin-1,content);
-            edit.h.setPinpoint(pin);
+            edit.h.setPinpoint(pin+Pins[1]-Pins[0]);
             edit.cover(result);
         }
     }
