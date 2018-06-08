@@ -343,7 +343,7 @@ class CommandM implements  Command{
         String result=edit.Add(pin,content);
         edit.fresh(result);
         result=edit.Delete(Pins);
-        edit.h.setPinpoint(pin+1+Pins[1]-Pins[0]);
+        edit.h.setPinpoint(pin+Pins[1]-Pins[0]);
         edit.cover(result);}
         else{
             String content=edit.print(Pins,false);
