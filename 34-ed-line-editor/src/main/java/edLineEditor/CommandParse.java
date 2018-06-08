@@ -71,9 +71,6 @@ public class CommandParse {
                 break;
             }
         }
-if(command.startsWith("/in,l/")){
-            para="2";
-}
         return c;//打包了命令的全部内容
     }
 

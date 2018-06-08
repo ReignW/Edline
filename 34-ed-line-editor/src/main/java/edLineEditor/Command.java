@@ -331,7 +331,7 @@ class CommandM implements  Command{
         }
     }
     public void run() {
-        int pin=edit.ParaParse(para);
+        int pin=edit.ParaParse(para)+1;
         if(Pins[1]<pin){
         String content=edit.print(Pins,false);
         String result=edit.Add(pin,content);
