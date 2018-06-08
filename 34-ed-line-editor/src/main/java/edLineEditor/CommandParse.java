@@ -82,8 +82,8 @@ public class CommandParse {
         }
         if(commandbe=='Q'||commandbe=='q'){
             if(command.length()!=1){
-                throw new Question();
-
+                System.out.print("?");
+                throw new Exit();
             }
         }
         return c;//打包了命令的全部内容
