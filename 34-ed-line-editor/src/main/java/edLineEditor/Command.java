@@ -110,10 +110,6 @@ class CommandE implements  Command{
         this.edit=e;
     }
     public void run(){
-        if(edit.h.getLast().contains("nanjing:The Mausoleum of Dr. Sun Yat-sen")){
-                System.out.println("3");
-                return;
-        }
         edit.equal(Pins);
     }
 }

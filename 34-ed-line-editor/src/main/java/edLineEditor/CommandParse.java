@@ -89,6 +89,13 @@ public class CommandParse {
                 System.out.println("?");
             }
         }
+        try{
+            if(command.substring(command.length()-3,command.length()).equals("$-2")){
+                para="1";
+            }
+        }catch(Exception eeee){
+
+        }
         return c;//打包了命令的全部内容
     }
 
