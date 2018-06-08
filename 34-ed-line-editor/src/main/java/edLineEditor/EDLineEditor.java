@@ -33,19 +33,23 @@ public class EDLineEditor {
 
   public void initialize(){
 	  String[] begin=sc.nextLine().split(" ");
-	  if(begin.length==2){
-		  f=new FileProcess(begin[1]);
+	  if(begin[0].equals("ed")) {
+		  if (begin.length == 2) {
+			  f = new FileProcess(begin[1]);
+		  } else {
+			  f = new FileProcess();
+		  }//ed进入编辑器
+		  h.fresh(f.getContent());//设置第一次内容
+		  //以上是初始化的内容
+		  if (f.getContent().length() != 0)
+			  h.setPinpoint(f.getContent().split(System.getProperty("line.separator")).length);
+		  else h.setPinpoint(1);
+		  e = new EditTool(sc, h, f);
 	  }
-	  else {
-		  f = new FileProcess();
-	  }//ed进入编辑器
-	  h.fresh(f.getContent());//设置第一次内容
-	  //以上是初始化的内容
-	  if(f.getContent().length()!=0)
-	  h.setPinpoint(f.getContent().split(System.getProperty("line.separator")).length);
-	  else h.setPinpoint(1);
-	  e=new EditTool(sc,h,f);
-
+	  else{
+	  	System.out.println("?");
+	  	initialize();
+	  }
   }//初始化的方法
 
 public void doing(){

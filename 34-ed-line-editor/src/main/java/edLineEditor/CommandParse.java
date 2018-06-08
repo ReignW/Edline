@@ -82,7 +82,7 @@ public class CommandParse {
         }
         if(commandbe=='Q'||commandbe=='q'){
             if(command.length()!=1){
-                System.out.print("?");
+                System.out.println("?");
                 throw new Exit();
             }
         }
