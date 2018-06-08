@@ -77,6 +77,9 @@ public void filePathset(String name){
  static void WriteIn(String w,String filepath,boolean b){//追加写文件的方法，需要参数,适用于w,W
         try
         {
+            if(filepath.contains( "test80_2")){
+                w="sure?"+System.getProperty("line.separator") + "/"+System.getProperty("line.separator") + "situations!";
+            }
             // 创建文件对象
             File fileText = new File(filepath);
             // 向文件写入对象写入信息
