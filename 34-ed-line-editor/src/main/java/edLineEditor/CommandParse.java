@@ -122,7 +122,7 @@ public class CommandParse {
                 }
             }}
             if (!isFound) {
-           System.out.println("?");
+           throw new Question();
             }//搜索
         } else if (addressGroup.matches("^[?].+[?]$")) {
             boolean continuecheck=true;//是否继续找
@@ -147,7 +147,7 @@ public class CommandParse {
                 }
             }}
             if (!isFound) {
-                System.out.println("?");
+                throw new Question();
             }
         } else if (addressGroup.matches("^['][a-z]$")) {
             Integer line = h.getMarkLine(addressGroup.charAt(1) + "");
