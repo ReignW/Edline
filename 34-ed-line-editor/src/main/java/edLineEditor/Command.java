@@ -52,6 +52,9 @@ class CommandD implements  Command{
         if(pins[0]==-999){
             throw new Question();
         }
+        if(pins[1]>e.h.getMax()){
+            throw new Question();
+        }
         this.edit=e;
     }
     public void run(){

@@ -33,7 +33,6 @@ public class EDLineEditor {
 
   public void initialize(){
 	  String[] begin=sc.nextLine().split(" ");
-	  if(begin[0].equals("ed")) {
 		  if (begin.length == 2) {
 			  f = new FileProcess(begin[1]);
 		  } else {
@@ -45,11 +44,7 @@ public class EDLineEditor {
 			  h.setPinpoint(f.getContent().split(System.getProperty("line.separator")).length);
 		  else h.setPinpoint(1);
 		  e = new EditTool(sc, h, f);
-	  }
-	  else{
-	  	System.out.println("?");
-	  	initialize();
-	  }
+
   }//初始化的方法
 
 public void doing(){
