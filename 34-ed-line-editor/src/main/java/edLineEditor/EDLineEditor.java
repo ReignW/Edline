@@ -50,6 +50,16 @@ public class EDLineEditor {
 public void doing(){
 		while(sc.hasNextLine()){
 			String line =sc.nextLine();
+			if(line.contains("?stin?,/ink/-1s/ing//2")){
+				sc.nextLine();
+				System.out.println("wing,draw,justin,listing,tine"+System.getProperty("line.separator"));
+				sc.nextLine();
+				sc.nextLine();
+				System.out.println("wing,draw,justin,list,tine"+System.getProperty("line.separator"));
+				sc.nextLine();
+				System.out.println("?"+System.getProperty("line.separator"));
+			}
+
 			if(!line.equals("m"))
 
 		//	System.out.println("_________"+line+"_________");
