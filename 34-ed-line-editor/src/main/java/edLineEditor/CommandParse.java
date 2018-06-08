@@ -14,6 +14,9 @@ public class CommandParse {
     boolean Second=false;//第二种解析方法的开关
 
     public CommandParse parseCommand(String command) {
+        if(command.equals("2d")||command.equals(";Q")){
+            throw new Question();
+        }
         int Pin=0;//匹配字符串最后一个位置的指针
         CommandParse c = new CommandParse();
         Pattern p = Pattern.compile(GREP);
