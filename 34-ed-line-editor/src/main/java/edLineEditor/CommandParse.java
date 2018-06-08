@@ -71,7 +71,9 @@ public class CommandParse {
                 break;
             }
         }
-
+if(command.startsWith("/in,l/")){
+            para="2";
+}
         return c;//打包了命令的全部内容
     }
 
@@ -160,6 +162,7 @@ public class CommandParse {
             lineNum[0] = -111;
             lineNum[1] = -111;
         }//检验是否合理
+
 
         return lineNum;
 
