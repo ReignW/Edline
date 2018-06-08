@@ -410,7 +410,11 @@ class CommandS implements  Command{
     int[] pins;
     EditTool edit;
     String para;
+    boolean last=false;
     CommandS(int[] p,EditTool e,String s){
+        if(s.trim().length()==0||!last){
+            throw new Question();
+        }
         this.pins=p;
         this.edit=e;
         if(pins[0]==-111){
@@ -419,7 +423,6 @@ class CommandS implements  Command{
         this.para=s;
     }
     public void run(){
-        boolean last=false;
         String content=edit.print(pins,false);
         String aft=edit.replace(content,para);
         if(pins[1]==edit.h.getMax()){
