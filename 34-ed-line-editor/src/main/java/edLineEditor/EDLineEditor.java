@@ -60,6 +60,12 @@ public void doing(){
 				catch(Question q){
 				System.out.println("?");
 				}
+				catch(Exit e){
+				throw new Exit();
+				}
+				catch(Exception ee){
+					System.out.println("?");
+				}
 
 		//	System.out.print(h.getLast()+" "+h.getPinpoint());//检查
 		}
