@@ -14,23 +14,20 @@ public class CommandParse {
     boolean Second=false;//第二种解析方法的开关
 
     public CommandParse parseCommand(String command) {
-        String[] ju=command.split("");
+       String[] ju=command.split("");
         int count=0;
         for(int i=0;i<ju.length;i++){
             if(ju[i].contains("?")){
                 count++;
             }
         }
-        if(count%2==1){
-            throw new Question();
-        }
-      count=0;
+      int count1=0;
         for(int i=0;i<ju.length;i++){
             if(ju[i].contains("/")){
-                count++;
+                count1++;
             }
         }
-        if(count%2==1){
+        if(count%2==1&&count1%2==1){
             throw new Question();
         }
         int Pin=0;//匹配字符串最后一个位置的指针
