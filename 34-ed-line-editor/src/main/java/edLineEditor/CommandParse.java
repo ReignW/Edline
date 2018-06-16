@@ -120,11 +120,11 @@ public class CommandParse {
         boolean isFound = false;
         int[] lineNum=new int[2];
         int change=0;
-        if( addressGroup.substring(0,addressGroup.length()-2).matches("^[/].+[/]$")||addressGroup.substring(0,addressGroup.length()-2).matches("^[?].+[?]$"))
+        if(( addressGroup.substring(0,addressGroup.length()-2).matches("^[/].+[/]$")&&(addressGroup.contains("/+")||addressGroup.contains("/-")))||(addressGroup.substring(0,addressGroup.length()-2).matches("^[?].+[?]$")&&(addressGroup.contains("?+")||addressGroup.contains("?-"))))
         {
             change=Integer.valueOf(addressGroup.substring(addressGroup.length()-2,addressGroup.length()));
             addressGroup=addressGroup.substring(0,addressGroup.length()-2);
-        }
+        }//调整复合命令
         if (addressGroup.matches("^[/].+[/]$")) {
             boolean continuecheck=true;
             String temp = addressGroup.substring(1, addressGroup.length() - 1);
