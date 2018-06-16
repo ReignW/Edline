@@ -16,12 +16,12 @@ public class CommandParse {
     public CommandParse parseCommand(String command) {
         String reg = "/";
         int count = (" " + command + " ").split(reg).length - 1;//判断字符出现次数
-        if(count%2==1){
+        if(count%2==0){
             throw new Question();
         }
         reg = "[?]";
         count = (" " + command + " ").split(reg).length - 1;//判断字符出现次数
-        if(count%2==1){
+        if(count%2==0){
             throw new Question();
         }
         if(command.contains(".$a")){
