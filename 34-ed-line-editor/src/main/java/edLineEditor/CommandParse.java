@@ -14,7 +14,14 @@ public class CommandParse {
     boolean Second=false;//第二种解析方法的开关
 
     public CommandParse parseCommand(String command) {
-        if(command.startsWith("/")&&!(command.substring(command.length()-1,command.length()).equals(command.substring(0,1)))){
+        String reg = "/";
+        int count = (" " + command + " ").split(reg).length - 1;//判断字符出现次数
+        if(count%2==1){
+            throw new Question();
+        }
+        reg = "[?]";
+        count = (" " + command + " ").split(reg).length - 1;//判断字符出现次数
+        if(count%2==1){
             throw new Question();
         }
         if(command.contains(".$a")){
