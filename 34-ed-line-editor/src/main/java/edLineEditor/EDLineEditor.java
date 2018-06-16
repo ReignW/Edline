@@ -53,7 +53,7 @@ public void doing(){
 
 			if(!line.equals("m"))
 
-		//	System.out.println("_________"+line+"_________");
+		System.out.println("_________"+line+"_________");
 			try {
 					Dealer.engine(line, h, e);
 				}
