@@ -14,10 +14,10 @@ public class CommandParse {
     boolean Second=false;//第二种解析方法的开关
 
     public CommandParse parseCommand(String command) {
-        if(command.startsWith("/")&&!(command.substring(0,command.length()-1).equals(command.substring(0,1)))){
+        if(command.startsWith("/")&&!(command.substring(command.length()-1,command.length()).equals(command.substring(0,1)))){
             throw new Question();
         }
-        if(command.contains(".$")){
+        if(command.contains(".$a")){
             throw new Question();
         }
         int Pin=0;//匹配字符串最后一个位置的指针
