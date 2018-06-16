@@ -14,17 +14,23 @@ public class CommandParse {
     boolean Second=false;//第二种解析方法的开关
 
     public CommandParse parseCommand(String command) {
-        String reg = "/";
-        int count = (" " + command + " ").split(reg).length - 1;//判断字符出现次数
-        if(count%2==0){
+        String[] ju=command.split("");
+        int count=0;
+        for(int i=0;i<ju.length;i++){
+            if(ju[i].contains("?")){
+                count++;
+            }
+        }
+        if(count%2==1){
             throw new Question();
         }
-        reg = "[?]";
-        count = (" " + command + " ").split(reg).length - 1;//判断字符出现次数
-        if(count%2==0){
-            throw new Question();
+      count=0;
+        for(int i=0;i<ju.length;i++){
+            if(ju[i].contains("/")){
+                count++;
+            }
         }
-        if(command.contains(".$a")){
+        if(count%2==1){
             throw new Question();
         }
         int Pin=0;//匹配字符串最后一个位置的指针
@@ -53,7 +59,9 @@ public class CommandParse {
           }
       }
       Pin++;
-
+            if(command.contains(".$a")){
+                throw new Question();
+            }
         //解析参数
         if (Pin <= command.length()) {
             para=command.substring(Pin).trim();//所有起始和结尾的空格都被删除
@@ -102,6 +110,7 @@ public class CommandParse {
                 System.out.println("?");
             }
         }
+
         return c;//打包了命令的全部内容
     }
 
