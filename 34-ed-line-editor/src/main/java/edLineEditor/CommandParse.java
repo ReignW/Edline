@@ -119,13 +119,19 @@ public class CommandParse {
         //空地址
         boolean isFound = false;
         int[] lineNum=new int[2];
+        int change=0;
+        if( addressGroup.substring(0,addressGroup.length()-2).matches("^[/].+[/]$")||addressGroup.substring(0,addressGroup.length()-2).matches("^[?].+[?]$"))
+        {
+            change=Integer.valueOf(addressGroup.substring(addressGroup.length()-2,addressGroup.length()));
+            addressGroup=addressGroup.substring(0,addressGroup.length()-2);
+        }
         if (addressGroup.matches("^[/].+[/]$")) {
             boolean continuecheck=true;
             String temp = addressGroup.substring(1, addressGroup.length() - 1);
             String[] content=h.getLast().split(System.getProperty("line.separator"));
             for (int i = h.getPinpoint(); i < content.length; i++) {
                 if (content[i].contains(temp)) {
-                    lineNum[0] = i + 1;
+                    lineNum[0] = i + 1+change;
                     lineNum[1] = lineNum[0];
                     isFound = true;
                     continuecheck=false;
@@ -134,7 +140,7 @@ public class CommandParse {
             }if(continuecheck){
             for(int i=0;i<h.getPinpoint();i++){
                 if (content[i].contains(temp)) {
-                    lineNum[0] = i + 1;
+                    lineNum[0] = i + 1+change;
                     lineNum[1] = lineNum[0];
                     isFound = true;
                     break;
@@ -149,7 +155,7 @@ public class CommandParse {
             String[] content=h.getLast().split(System.getProperty("line.separator"));
             for (int i = h.getPinpoint()- 2; i >= 0; i--) {
                 if (content[i].contains(temp)) {
-                    lineNum[0] = i + 1;
+                    lineNum[0] = i + 1+change;
                     lineNum[1] = lineNum[0];
                     isFound = true;
                     continuecheck=false;
@@ -159,7 +165,7 @@ public class CommandParse {
             if(continuecheck){
             for(int i=h.getMax()-1;i>h.getPinpoint()-2;i--){
                 if (content[i].contains(temp)) {
-                    lineNum[0] = i + 1;
+                    lineNum[0] = i + 1+change;
                     lineNum[1] = lineNum[0];
                     isFound = true;
                     break;

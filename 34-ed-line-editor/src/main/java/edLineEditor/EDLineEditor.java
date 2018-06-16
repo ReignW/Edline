@@ -53,8 +53,8 @@ public void doing(){
 
 			if(!line.equals("m"))
 
-		System.out.println("_________"+line+"_________");
-		/*	try {
+	//	System.out.println("_________"+line+"_________");
+		try {
 					Dealer.engine(line, h, e);
 				}
 				catch(Question q){
@@ -66,7 +66,7 @@ public void doing(){
 				catch(Exception ee){
 					System.out.println("?");
 				}
-*/
+
 		//	System.out.print(h.getLast()+" "+h.getPinpoint());//检查
 		}
 }//执行
