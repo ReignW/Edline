@@ -22,7 +22,7 @@ CommandA(int[] pins,EditTool e){
         edit.fresh(result);
     }
 }
-
+//test
 
 class CommandI implements  Command{
     int[] Pins;
